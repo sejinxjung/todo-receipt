@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import ListScreen from './screens/ListScreen';
 import AboutScreen from './screens/AboutScreen';
 import DoneScreen from './screens/DoneScreen';
-
+import { createDrawerNavigator} from '@react-navigation/drawer';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Drawer = createDrawerNavigator();
 

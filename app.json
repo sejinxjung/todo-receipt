@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "todo receipt",
-    "slug": "todo receipt",
+    "slug": "todo-receipt",
     "platforms": [
       "ios",
       "android",
