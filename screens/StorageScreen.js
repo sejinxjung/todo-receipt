@@ -8,23 +8,23 @@ import {
 } from 'react-native'
 import {withContext} from 'react-simplified-context'
 import TodoItem from '../components/TodoItem'
-import DoneHeader from '../components/DoneHeader'
+import StorageHeader from '../components/StorageHeader'
 import Category from '../components/Category'
 import SettingButton from '../components/SettingButton'
 
 
-const ListScreen = ({
+const StorageScreen = ({
   todos,
   navigation,
 }) => {
   return (
     <SafeAreaView>
       <SettingButton navigationProps={navigation}/>
-      <DoneHeader />
+      <StorageHeader />
       <Category />
       <FlatList
         data={todos.filter((todo) => {
-          return todo.done
+          return todo.finished
         })}
         renderItem={({item}) => { return <TodoItem todo={item} /> 
         }}
@@ -41,4 +41,4 @@ const styles = StyleSheet.create ({
   }
 })
 
-export default withContext(ListScreen)
+export default withContext(StorageScreen)

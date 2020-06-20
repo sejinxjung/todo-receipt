@@ -6,16 +6,16 @@ import {
 } from 'react-native'
 
 
-const DoneHeader = () => {
+const StorageHeader = () => {
   let now = new Date()
   const today = now.toLocaleDateString()
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.semititle}> Finished
+        <Text style={styles.semititle}> To Do
         </Text>
         <Text style={styles.title}>
-          Receipt
+          Storage
         </Text>
       </View>
       <View style={styles.profile}>
@@ -58,4 +58,4 @@ const styles = StyleSheet.create ({
     fontSize: 14,
   },
 })
-export default DoneHeader
+export default StorageHeader

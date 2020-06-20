@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import ListScreen from './screens/ListScreen';
 import AboutScreen from './screens/AboutScreen';
-import DoneScreen from './screens/DoneScreen';
+import StorageScreen from './screens/StorageScreen';
 import { createDrawerNavigator} from '@react-navigation/drawer';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Drawer = createDrawerNavigator();
 
@@ -21,9 +18,9 @@ const MyDrawer = () => {
         options={{ drawerLabel: 'Main' }}
       />
       <Drawer.Screen
-        name="Done"
-        component={DoneScreen}
-        options={{ drawerLabel: 'Done' }}
+        name="Storage"
+        component={StorageScreen}
+        options={{ drawerLabel: 'Storage' }}
       />
       <Drawer.Screen
         name="About"

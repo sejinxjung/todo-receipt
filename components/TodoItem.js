@@ -4,25 +4,27 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
+  TouchableHighlightBase,
 } from 'react-native'
 import {FontAwesome} from '@expo/vector-icons'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
 import DeleteButton from './DeleteButton'
+import { withContext } from 'react-simplified-context'
 
 const TodoItem = ({
   todo: {
-    id, 
-    title, 
-    date, 
-    done,
-  }
+    id,
+    title,
+    date,
+    finished,
+  },
+  toggle,
+  remove,
 }) => {
   return (
     <Swipeable
-      renderRightActions={
-        () => [
-        <DeleteButton />,
-        ]}>
+      renderRightActions={ () => <DeleteButton onPress={() => remove(id)}/>}
+      >
       <View style={styles.container}>
         <View style={styles.todo}>
           <View style={styles.itemBox}>
@@ -37,9 +39,10 @@ const TodoItem = ({
           </View>
           <TouchableOpacity
             activeOpacity={0.8}
-            style ={done ? styles.done : styles.check}
+            onPress = {() => toggle(id)}
+            style ={finished ? styles.finished : styles.check}
           >
-            <FontAwesome name = 'check' color={done? '#ffffff' : '#e0e0e0'} size={14}/>
+            <FontAwesome name = 'check' color={finished? '#ffffff' : '#e0e0e0'} size={14}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -50,7 +53,7 @@ const TodoItem = ({
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
-    backgroundColor: '#fff'
+    backgroundColor: '#f1f1f1'
   },
   todo: {
     paddingHorizontal: 8,
@@ -82,7 +85,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 8,
   },
-  done: {
+  finished: {
     borderRadius: 14,
     width: 28,
     height: 28,
@@ -93,4 +96,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default TodoItem
+export default withContext(TodoItem)
