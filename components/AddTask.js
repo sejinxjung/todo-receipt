@@ -18,11 +18,11 @@ const AddTask = ({
         activeOpacity={0.8}
         onPress={show}
       >
-        <FontAwesome name = 'barcode' color='#000000' size={72}/>
-        <FontAwesome name = 'barcode' color='#000000' size={72}/>
+        <FontAwesome name = 'barcode' color='#5588a3' size={72}/>
+        <FontAwesome name = 'barcode' color='#5588a3' size={72}/>
       </TouchableOpacity>
-      <Text>
-        Tab the barcode to add task
+      <Text style={styles.text}>
+        Tab the Barcode To Add Task
       </Text>        
     </View>
   )
@@ -33,27 +33,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     alignItems: 'center',
   },
-  box: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 20,
-    borderTopWidth: 2,
-  },
-  textBox: {
-    width: 76,
-    alignItems: 'center',
-  },
   text: {
     marginVertical: 4,
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: 12,
+    fontWeight: '700',
+    color: '#5588a3'
   },
-  barcode: {
-    width: 200,
-    height: 50,
-    backgroundColor: '#000000',
-  }
 })
 
 export default withContext(AddTask)

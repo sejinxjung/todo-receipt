@@ -27,29 +27,29 @@ const TodoItem = ({
       >
       <View style={styles.container}>
         <View style={styles.todo}>
-          <View style={styles.itemBox}>
-            <View style={styles.textBox}>
-              <Text style={styles.title}>
-              {id}
+          <View style={{flexDirection: 'row'}}>
+            <View style={{width: 54, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={finished ? styles.findate : styles.date}>
+              {date}
               </Text>
             </View>
-
+            <View style={styles.item}>
             <TouchableOpacity
               activeOpacity={0.8}
               onPress={edit}
             >
-              <Text style={styles.title}>
-                {title}
+              <Text style={finished ? styles.fintitle : styles.title}>{title}
               </Text>
             </TouchableOpacity>
+            </View>
           </View>
 
           <TouchableOpacity
             activeOpacity={0.8}
             onPress = {() => toggle(id)}
-            style ={finished ? styles.finished : styles.check}
+            style ={styles.check}
           >
-            <FontAwesome name = 'check' color={finished? '#ffffff' : '#e0e0e0'} size={14}/>
+            <FontAwesome name = 'check' color={finished? '#ca3e47' : '#dddddd'} size={14}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -60,46 +60,59 @@ const TodoItem = ({
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
-    backgroundColor: '#f1f1f1'
+    backgroundColor: '#ececec'
   },
   todo: {
-    paddingHorizontal: 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: 50,
+    height: 48,
     borderBottomWidth: 1,
-    borderBottomColor: '#e5e5e5'
+    borderBottomColor: '#dadada'
   },
-  itemBox: {
-    flexDirection: 'row',
+  date: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#385170',
   },
-  textBox: {
-    width: 60,
+  findate: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#bbbbbb',
+  },
+  item: {
+    paddingLeft: 8,
   },
   title: {
     fontSize: 16,
-    color: '#424242',
-    fontWeight: '600',
+    color: '#142d4c',
+    fontWeight: '700',
+  },
+  fintitle: {
+    fontSize: 16,
+    textDecorationLine: "line-through",
+    color: '#bbbbbb',
+    fontWeight: '700',
+    marginRight: 4,
   },
   check: {
     borderWidth: 1,
-    borderColor: '#e5e5e5',
-    borderRadius: 14,
-    width: 28,
-    height: 28,
+    borderColor: '#dddddd',
+    borderRadius: 4,
+    width: 24,
+    height: 24,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 8,
+    marginRight: 12,
   },
-  finished: {
-    borderRadius: 14,
-    width: 28,
-    height: 28,
+  fincheck: {
+    borderRadius: 4,
+    width: 24,
+    height: 24,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 8,
     backgroundColor: '#6830cf',
+    marginRight: 12,
   },
 })
 

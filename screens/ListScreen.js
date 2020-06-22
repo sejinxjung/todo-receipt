@@ -37,12 +37,11 @@ const ListScreen = ({
       <View style={styles.content}>
         <View style={styles.box}>
           <View style={styles.textBox}>
-            <Text style={styles.text}>
-              Left
+            <Text style={styles.text}> Left
             </Text>
           </View>
           <View style={styles.textBox}>
-            <Text style={styles.text}>
+            <Text style={styles.left}>
               {count}
             </Text>
           </View>  
@@ -57,6 +56,7 @@ const ListScreen = ({
 const styles = StyleSheet.create ({
   container: {
     flex: 1,
+    backgroundColor: '#ececec',
   },
   content: {
     paddingHorizontal: 8,
@@ -68,15 +68,23 @@ const styles = StyleSheet.create ({
     justifyContent: 'space-between',
     marginBottom: 20,
     borderTopWidth: 2,
+    borderTopColor: '#5588a3'
   },
   textBox: {
-    width: 76,
+    width: 66,
     alignItems: 'center',
   },
   text: {
     marginVertical: 4,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '600',
+    color:'#5588a3'
+  },
+  left: {
+    marginVertical: 4,
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#ca3e47'
   }
 })
 

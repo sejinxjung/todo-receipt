@@ -16,8 +16,7 @@ const Category = () => {
               Date
             </Text>
           </View>
-          <Text style={styles.text}>
-            Item
+          <Text style={styles.text}>Item
           </Text>
         </View>
         <View style={styles.textBox}>
@@ -39,17 +38,20 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderTopWidth: 2,
     borderBottomWidth: 2,
+    borderTopColor: '#5588a3',
+    borderBottomColor: '#5588a3',
   },
   itemBox: {
     flexDirection: 'row',
   },
   textBox: {
-    width: 76,
+    width: 70,
     alignItems: 'center',
   },
   text: {
     marginVertical: 4,
-    fontSize: 18,
+    fontSize: 16,
+    color: '#5588a3',
     fontWeight: '600',
   },
 })

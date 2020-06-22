@@ -18,7 +18,7 @@ const SettingButton = (props) => {
       style={styles.button}
       onPress={() => toggleDrawer()}
     >
-      <SimpleLineIcons name = 'settings' color='#333333' size={24}/>
+      <SimpleLineIcons name = 'settings' color='#5588a3' size={24}/>
     </TouchableOpacity>
   </View> 
   )

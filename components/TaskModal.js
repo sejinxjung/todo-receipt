@@ -13,7 +13,10 @@ const TaskModal = ({
   add,
   hide,
   update,
+  todo,
+  id,
 }) => {
+  let title = todo? todo.title : ''
   return (
     <Modal
       isVisible={isVisible}
@@ -29,7 +32,7 @@ const TaskModal = ({
           }}
           autoFocus={true}
           onEndEditing={() => 
-            update(title)}
+            update(id,title)}
           >
             {title}
           </TextInput>

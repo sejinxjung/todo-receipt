@@ -38,12 +38,12 @@ const styles = StyleSheet.create ({
     paddingHorizontal: 24,
   },
   semititle: {
-    color: '#212121',
+    color: '#385170',
     fontSize: 21,
     fontWeight: '600',
   },
   title: {
-    color: '#212121',
+    color: '#142d4c',
     fontSize: 36,
     fontWeight: '700',
     marginTop: -6,
@@ -54,8 +54,9 @@ const styles = StyleSheet.create ({
     alignItems: 'flex-end',
   },
   text: {
-    color: '#212121',
+    color: '#5588a3',
     fontSize: 14,
+    fontWeight: '500'
   },
 })
 export default Header
