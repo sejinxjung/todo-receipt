@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  TouchableHighlightBase,
 } from 'react-native'
 import {FontAwesome} from '@expo/vector-icons'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
@@ -20,6 +19,7 @@ const TodoItem = ({
   },
   toggle,
   remove,
+  edit,
 }) => {
   return (
     <Swipeable
@@ -30,13 +30,20 @@ const TodoItem = ({
           <View style={styles.itemBox}>
             <View style={styles.textBox}>
               <Text style={styles.title}>
-              {date}
+              {id}
               </Text>
             </View>
-            <Text style={styles.title}>
-              {title}
-            </Text>
+
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={edit}
+            >
+              <Text style={styles.title}>
+                {title}
+              </Text>
+            </TouchableOpacity>
           </View>
+
           <TouchableOpacity
             activeOpacity={0.8}
             onPress = {() => toggle(id)}
