@@ -11,6 +11,9 @@ const MyDrawer = () => {
     <Drawer.Navigator 
       initialRouteName="Main"
       drawerPosition="right"
+      drawerStyle={{
+        backgroundColor: '#ececec',
+      }}
     >
       <Drawer.Screen
         name="Main"

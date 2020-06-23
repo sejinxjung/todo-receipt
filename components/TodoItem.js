@@ -20,6 +20,7 @@ const TodoItem = ({
   toggle,
   remove,
   edit,
+  isEditing,
 }) => {
   return (
     <Swipeable
@@ -35,8 +36,9 @@ const TodoItem = ({
             </View>
             <View style={styles.item}>
             <TouchableOpacity
+              id={id}
               activeOpacity={0.8}
-              onPress={edit}
+              onPress={(id)=> edit(id)}
             >
               <Text style={finished ? styles.fintitle : styles.title}>{title}
               </Text>

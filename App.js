@@ -12,6 +12,7 @@ export default class App extends React.Component {
     showModal: false,
     editing: false,
   }
+
   componentDidMount() {
     AsyncStorage.getItem('@receipt:state').then((state) => {
       this.setState(JSON.parse(state))
@@ -55,12 +56,13 @@ export default class App extends React.Component {
             todos: this.state.todos.filter((a) => a.id !== id)
           }, this.save)
         }}
-        update={(id, title) => {
+        update={(id, title, date) => {
           const newTodos = [...this.state.todos]
           const index = newTodos.findIndex((a) => {
             return a.id ===id
           })
           newTodos[index].title = title
+          newTodos[index].date = date
           this.setState({
             todos: newTodos, 
             showModal: false,

@@ -11,7 +11,6 @@ import Category from '../components/Category'
 import SettingButton from '../components/SettingButton'
 
 const AboutScreen = ({
-  todos,
   navigation,
 }) => {
   const count = todos.filter((todo) => !todo.finished).length

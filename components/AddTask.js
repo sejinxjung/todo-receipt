@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    marginVertical: 4,
+    marginBottom: 4,
     fontSize: 12,
     fontWeight: '700',
     color: '#5588a3'

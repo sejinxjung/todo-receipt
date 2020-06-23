@@ -47,7 +47,7 @@ const ListScreen = ({
           </View>  
         </View>
         <AddTask/>
-        <TaskModal/>
+        <TaskModal title={todos.title}/>
       </View>
     </SafeAreaView>
   )
