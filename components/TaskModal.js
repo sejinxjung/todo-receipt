@@ -13,10 +13,8 @@ const TaskModal = ({
   add,
   hide,
   update,
-  todo,
-  id,
 }) => {
-  let title = todo? todo.title : ''
+  let title = '모르겠어요...'
   return (
     <Modal
       isVisible={isVisible}

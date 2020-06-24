@@ -13,8 +13,6 @@ import SettingButton from '../components/SettingButton'
 const AboutScreen = ({
   navigation,
 }) => {
-  const count = todos.filter((todo) => !todo.finished).length
-
   return (
     <SafeAreaView>
       <SettingButton navigationProps={navigation}/>

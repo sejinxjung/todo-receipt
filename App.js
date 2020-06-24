@@ -4,7 +4,6 @@ import {ContextProvider} from 'react-simplified-context' //아이템 관리
 import { NavigationContainer } from '@react-navigation/native';
 import MyDrawer from './Drawer';
 
-//check 세이브 안됨, item이 editing: false로 동일.
 export default class App extends React.Component {
   state = {
     todos: [],
@@ -56,7 +55,7 @@ export default class App extends React.Component {
             todos: this.state.todos.filter((a) => a.id !== id)
           }, this.save)
         }}
-        update={(id, title, date) => {
+        update={(id,title,date) => {
           const newTodos = [...this.state.todos]
           const index = newTodos.findIndex((a) => {
             return a.id ===id
@@ -71,8 +70,8 @@ export default class App extends React.Component {
         }}
         //Modal
         hide={() => {
-          this.setState({ showModal: false})
           this.setState({ editing: false})
+          this.setState({ showModal: false})
         }}
         show={() => {
           this.setState({ showModal: true})

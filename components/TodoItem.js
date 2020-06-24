@@ -20,7 +20,6 @@ const TodoItem = ({
   toggle,
   remove,
   edit,
-  isEditing,
 }) => {
   return (
     <Swipeable
@@ -30,17 +29,16 @@ const TodoItem = ({
         <View style={styles.todo}>
           <View style={{flexDirection: 'row'}}>
             <View style={{width: 54, alignItems: 'center', justifyContent: 'center'}}>
-              <Text style={finished ? styles.findate : styles.date}>
+              <Text style={finished ? styles.finDate : styles.date}>
               {date}
               </Text>
             </View>
             <View style={styles.item}>
             <TouchableOpacity
-              id={id}
               activeOpacity={0.8}
-              onPress={(id)=> edit(id)}
+              onPress={()=> edit(id)}
             >
-              <Text style={finished ? styles.fintitle : styles.title}>{title}
+              <Text style={finished ? styles.finTitle : styles.title}>{title}
               </Text>
             </TouchableOpacity>
             </View>
@@ -77,7 +75,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#385170',
   },
-  findate: {
+  finDate: {
     fontSize: 14,
     fontWeight: '600',
     color: '#bbbbbb',
@@ -90,7 +88,7 @@ const styles = StyleSheet.create({
     color: '#142d4c',
     fontWeight: '700',
   },
-  fintitle: {
+  finTitle: {
     fontSize: 16,
     textDecorationLine: "line-through",
     color: '#bbbbbb',
@@ -105,15 +103,6 @@ const styles = StyleSheet.create({
     height: 24,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12,
-  },
-  fincheck: {
-    borderRadius: 4,
-    width: 24,
-    height: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#6830cf',
     marginRight: 12,
   },
 })
