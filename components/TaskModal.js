@@ -9,12 +9,10 @@ import {withContext} from 'react-simplified-context'
 
 const TaskModal = ({
   isVisible,
-  isEditing,
+  title,
   add,
   hide,
-  update,
 }) => {
-  let title = '모르겠어요...'
   return (
     <Modal
       isVisible={isVisible}
@@ -23,18 +21,6 @@ const TaskModal = ({
       style={styles.modal}
     >
       <View style={styles.container}>
-        { isEditing ? ( 
-          <TextInput
-          onChangeText ={(text) => {
-            title = text
-          }}
-          autoFocus={true}
-          onEndEditing={() => 
-            update(id,title)}
-          >
-            {title}
-          </TextInput>
-        ):(
           <TextInput
           onChangeText ={(text) => {
             title = text
@@ -44,7 +30,6 @@ const TaskModal = ({
           onEndEditing={() => add(title)}
           >
           </TextInput>
-        )}
       </View>
     </Modal>
   )

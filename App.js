@@ -55,13 +55,16 @@ export default class App extends React.Component {
             todos: this.state.todos.filter((a) => a.id !== id)
           }, this.save)
         }}
-        update={(id,title,date) => {
+        edit={() => {
+          this.setState({ 
+            editing: true})
+        }}
+        update={(id,title) => {
           const newTodos = [...this.state.todos]
           const index = newTodos.findIndex((a) => {
             return a.id ===id
           })
           newTodos[index].title = title
-          newTodos[index].date = date
           this.setState({
             todos: newTodos, 
             showModal: false,
@@ -70,14 +73,12 @@ export default class App extends React.Component {
         }}
         //Modal
         hide={() => {
-          this.setState({ editing: false})
-          this.setState({ showModal: false})
+          this.setState({ 
+            editing: false,
+            showModal: false
+          }, this.save)
         }}
         show={() => {
-          this.setState({ showModal: true})
-        }}
-        edit={() => {
-          this.setState({ editing: true})
           this.setState({ showModal: true})
         }}
         isVisible={this.state.showModal}
