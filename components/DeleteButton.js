@@ -28,11 +28,12 @@ const DeleteButton = ({
 
 const styles = StyleSheet.create ({
   button: {
-    width: 45,
+    width: 65,
     height: 50,
     backgroundColor: '#fe5746',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: 13,
   },
   text:{
     color: '#fff',

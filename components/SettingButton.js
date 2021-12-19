@@ -27,6 +27,7 @@ const SettingButton = (props) => {
 const styles = StyleSheet.create ({
   box: {
     height: 36,
+    marginVertical: 8,
     paddingHorizontal: 16,
     flexDirection: 'row',
     justifyContent: 'flex-end',
